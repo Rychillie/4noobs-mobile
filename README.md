@@ -95,7 +95,7 @@ https://github.com/Rychillie/4noobs-mobile
 ### 🛠 Feito com
 
 - [React Native](https://reactnative.dev/) - Um framework para construir aplicações nativas com React
-- [Expo]() - 
+- [Expo](https://expo.io/) - Um Framework e uma plataforma universal para aplicações React. É um conjunto de ferramentas contruídos sobre o React Native e as plataformas nativas para ajudar no desenvolvimento, construção e publicação.
 
 ---
 
