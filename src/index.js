@@ -3,13 +3,13 @@ import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { View } from "react-native";
 
-import MyTabs from "./screens/Navigation";
+import Routes from "./navigation";
 
 export default function App() {
   return (
     <View style={{ flex: 1, backgroundColor: "#2C2C2C" }}>
       <NavigationContainer>
-        <MyTabs />
+        <Routes />
         <StatusBar style="light" />
       </NavigationContainer>
     </View>
