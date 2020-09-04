@@ -1,21 +1,21 @@
 import React from "react";
-import { Platform } from "react-native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
-import { FontAwesome } from "@expo/vector-icons";
-import { FontAwesome5 } from "@expo/vector-icons";
-import { Ionicons } from "@expo/vector-icons";
+import TabBarIcon from '../components/TabBarIcon';
 
-import HomeScreen from "./Home";
-import FavoritesScreen from "./Favorites";
-import SettingsScreen from "./Settings";
+import HomeScreen from "../screens/Home";
+import FavoritesScreen from "../screens/Favorites";
+import SettingsScreen from "../screens/Settings";
 
-const Tab = createBottomTabNavigator();
+const { Navigator, Screen} = createBottomTabNavigator();
 
-export default function MyTabs() {
+export default function MainBottomTab() {
   return (
-    <Tab.Navigator
+    <Navigator
       initialRouteName="Home"
+      screenOptions={({ route }) => ({
+        tabBarIcon: (props) => <TabBarIcon {...props} route={route.name} />,
+      })}
       tabBarOptions={{
         showLabel: false,
         tintColor: "#F3F4F5",
@@ -35,36 +35,27 @@ export default function MyTabs() {
         },
       }}
     >
-      <Tab.Screen
-        name="Home"
+      <Screen
+        name="home"
         component={HomeScreen}
         options={{
           tabBarLabel: "Inicio",
-          tabBarIcon: ({ color }) => (
-            <FontAwesome name="home" color={color} size={25} />
-          ),
         }}
       />
-      <Tab.Screen
-        name="Favorites"
+      <Screen
+        name="favorites"
         component={FavoritesScreen}
         options={{
           tabBarLabel: "Favoritos",
-          tabBarIcon: ({ color }) => (
-            <FontAwesome5 name="star" color={color} size={22} />
-          ),
         }}
       />
-      <Tab.Screen
-        name="Settings"
+      <Screen
+        name="settings"
         component={SettingsScreen}
         options={{
           tabBarLabel: "Configurações",
-          tabBarIcon: ({ color }) => (
-            <Ionicons name="ios-settings" color={color} size={25} />
-          ),
         }}
       />
-    </Tab.Navigator>
+    </Navigator>
   );
 }
