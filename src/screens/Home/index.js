@@ -89,7 +89,7 @@ export default function HomeScreen() {
         style={{ flexGrow: 0 }}
       >
         {Categories.map((Categories, index) => (
-          <CategoryItem key={Categories.index}>
+          <CategoryItem key={index}>
             <Category>{Categories.title}</Category>
           </CategoryItem>
         ))}
@@ -103,7 +103,7 @@ export default function HomeScreen() {
         {Courses.map((Courses, index) => (
           <Card
             style={{ backgroundColor: `${Courses.primaryColor}` }}
-            key={Courses.index}
+            key={index}
           >
             <ImageCard source={Courses.iconCurso} />
             <Call style={{ color: `${Courses.secondaryColor}` }}>
