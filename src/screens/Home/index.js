@@ -25,21 +25,25 @@ export default function HomeScreen() {
       primaryColor: "#203048",
       secondaryColor: "#50B484",
       iconCurso: require("../../../assets/Logo/LogoVueBig.png"),
+      category: "Frameworks",
     },
     {
-      title: "PHPNoobs",
+      title: "PHP4Noobs",
       primaryColor: "#8B9DD7",
       secondaryColor: "#FFFFFF",
       iconCurso: require("../../../assets/Logo/LogoPHPBig.png"),
+      category: "Linguagens de programação",
     },
   ];
 
   const Categories = [
     { title: "Todos" },
-    { title: "Ferramentas" },
-    { title: "Frameworks" },
-    { title: "Design" },
-    { title: "Sistemas Operacionais" },
+    { title: "💡 Linguagens de programação" },
+    { title: "📦 Frameworks" },
+    { title: "🔧 Ferramentas" },
+    { title: "💻 Sistemas operacionais" },
+    { title: "🎨 Design" },
+    { title: "🎲 Banco de dados" },
   ];
 
   const [Courses, setCourses] = useState(initialCourses);
