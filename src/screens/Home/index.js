@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { FontAwesome } from "@expo/vector-icons";
 
 import {
@@ -19,7 +19,7 @@ import {
 import Logo from "../../../assets/Logo/Logo.png";
 
 export default function HomeScreen() {
-  const Cursos = [
+  const initialCourses = [
     {
       title: "Vue4Noobs",
       primaryColor: "#203048",
@@ -34,13 +34,29 @@ export default function HomeScreen() {
     },
   ];
 
-  const Categorias = [
+  const Categories = [
     { title: "Todos" },
     { title: "Ferramentas" },
     { title: "Frameworks" },
     { title: "Design" },
     { title: "Sistemas Operacionais" },
   ];
+
+  const [Courses, setCourses] = useState(initialCourses);
+  const [researched, setResearched] = useState("");
+
+  useEffect(() => {
+    const course = researched.replace(/\s/g, "").toLowerCase();
+    let filter = Courses.filter((item) => {
+      return item.title.replace(/\s/g, "").toLowerCase().includes(course);
+    });
+
+    if (!filter || course.length == 0 || filter.length === 0) {
+      filter = initialCourses;
+    }
+
+    setCourses(filter);
+  }, [researched]);
 
   return (
     <Main>
@@ -59,6 +75,8 @@ export default function HomeScreen() {
           color="white"
         />
         <Search
+          onChangeText={(text) => setResearched(text)}
+          value={researched}
           placeholder="Busque um treinamento"
           placeholderTextColor="#fff"
         />
@@ -70,9 +88,9 @@ export default function HomeScreen() {
         overScrollMode="never"
         style={{ flexGrow: 0 }}
       >
-        {Categorias.map((Categorias, index) => (
-          <CategoryItem key={Categorias.index}>
-            <Category>{Categorias.title}</Category>
+        {Categories.map((Categories, index) => (
+          <CategoryItem key={Categories.index}>
+            <Category>{Categories.title}</Category>
           </CategoryItem>
         ))}
       </CategoryList>
@@ -82,14 +100,14 @@ export default function HomeScreen() {
         contentContainerStyle={{ paddingLeft: 20, paddingRight: 20 }}
         overScrollMode="never"
       >
-        {Cursos.map((Cursos, index) => (
+        {Courses.map((Courses, index) => (
           <Card
-            style={{ backgroundColor: `${Cursos.primaryColor}` }}
-            key={Cursos.index}
+            style={{ backgroundColor: `${Courses.primaryColor}` }}
+            key={Courses.index}
           >
-            <ImageCard source={Cursos.iconCurso} />
-            <Call style={{ color: `${Cursos.secondaryColor}` }}>
-              {Cursos.title}
+            <ImageCard source={Courses.iconCurso} />
+            <Call style={{ color: `${Courses.secondaryColor}` }}>
+              {Courses.title}
             </Call>
           </Card>
         ))}
