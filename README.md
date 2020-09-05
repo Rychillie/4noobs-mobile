@@ -29,6 +29,10 @@
   <img src="./readme/learn-dark.png" width="200" height="433" />
 </p>
 
+<p align="center">
+  <a href="https://www.figma.com/file/TFnYLZ5GkWywneNoSH0bof/4noobs-App?node-id=0%3A1">Projeto no Figma</a>
+</p>
+
 ---
 
 ## 🔖 Índice
