@@ -1,12 +1,14 @@
 <h1 align="center">
   <a href="https://github.com/Rychillie/4noobs-mobile">
-    <img alt="English Course Logo" src="./readme/logo.png" />
+    <img alt="Logo do 4noobs" src="./readme/logo.png" />
   </a>
 </h1>
 
 <h2 align="center">
   4noobs - Mobile
 </h2>
+
+<h6 align="center">You can also check the english version <a href="README.en-US.md">here</a>.</h6>
 
 <p align="center">
   <a href="https://github.com/Rychillie">
@@ -64,17 +66,15 @@
 
 ### 📜 Requisitos
 
-- Para rodar qualquer aplicação feita em React Native você precisa configurar o Ambiente de Desenvolvimento na sua máquina.
+Para rodar qualquer aplicação feita em React Native você precisa configurar o Ambiente de Desenvolvimento na sua máquina. Você pode verificar a documentação oficial [aqui](https://reactnative.dev/docs/environment-setup).
 
-- [ ] Trabalho em progresso ...
+- [ ] Trabalho em progresso...
 
 ### 👯 Clone
 
 - Clone esse repositório para sua máquina local:
 
-```
-https://github.com/Rychillie/4noobs-mobile
-```
+`https://github.com/Rychillie/4noobs-mobile`
 
 ### 🎛 Setup
 
@@ -94,12 +94,12 @@ https://github.com/Rychillie/4noobs-mobile
 
 ### 📖 Documentação
 
-- [ ] Trabalho em progresso ...
+- [ ] Trabalho em progresso...
 
 ### 🛠 Feito com
 
-- [React Native](https://reactnative.dev/) - Um framework para construir aplicações nativas com React
-- [Expo](https://expo.io/) - Um Framework e uma plataforma universal para aplicações React. É um conjunto de ferramentas contruídos sobre o React Native e as plataformas nativas para ajudar no desenvolvimento, construção e publicação.
+- [React Native](https://reactnative.dev/) - Um framework para construir aplicações nativas com React.
+- [Expo](https://expo.io/) - Expo é uma plataforma de código livre para criar aplicações nativas para Android, iOS e web utilizando JavaScript e React.
 
 ---
 
