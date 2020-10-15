@@ -41,7 +41,7 @@
   <li>
     <a href="#-Run-the-application">Run the application</a>
     <ul>
-      <li><a href="#-before-you-start">Requirements</a></li>
+      <li><a href="#-before-you-start">Before you start</a></li>
       <li><a href="#-clone">Clone</a></li>
       <li><a href="#-setup">Setup</a></li>
     </ul>
@@ -76,21 +76,23 @@ Clone this repository to your machine using the command:
 
 Install the dependencies using the command:
 
-- `$ yarn install`
+`$ yarn install` for Yarn, or `$ npm install` if you using NPM
 
-#### Android
+Run the local server to be able to use the application at Expo using:
 
-- `$ react-native run-android`
+**Android**
 
-#### iOS - _For macOS only_
+`$ yarn android` or `$ npm run android`
 
-- `$ cd ios && pod install && cd ..`
+**iOS**
 
-- `$ react-native run-ios`
+`$ yarn ios` or `$ npm run ios`
 
 ---
 
 ## 📋 Features
+
+- [ ] Working in progress...
 
 ### 📖 Documentation
 

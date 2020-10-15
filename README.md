@@ -8,7 +8,7 @@
   4noobs - Mobile
 </h2>
 
-<h6 align="center">You can also check the english version <a href="README.en-US.md">here</a>.</h6>
+<h6 align="center">You can also check the english version <a href="README.en-US.md">here</a>. 🇺🇸</h6>
 
 <p align="center">
   <a href="https://github.com/Rychillie">
@@ -51,12 +51,12 @@
   <li>
     <a href="#-funcionalidades">Funcionalidades</a>
     <ul>
-      <li><a href="#-documentacao">Documentação</a></li>
+      <li><a href="#-documentação">Documentação</a></li>
       <li><a href="#-feito-com">Feito Com</a></li>
     </ul>
   </li>
   <li><a href="#-contribuição">Contribuição</a></li>
-  <li><a href="#-apoio">Apoio</a></li>
+  <li><a href="#-contato">Contato</a></li>
   <li><a href="#-licença">Licença</a></li>
 </ul>
 
@@ -68,29 +68,33 @@
 
 Para rodar qualquer aplicação feita em React Native você precisa configurar o Ambiente de Desenvolvimento na sua máquina. Você pode verificar a documentação oficial [aqui](https://reactnative.dev/docs/environment-setup).
 
-- [ ] Trabalho em progresso...
-
 ### 👯 Clone
 
-- Clone esse repositório para sua máquina local:
+Clone esse repositório para sua máquina local usando o comando:
 
-`https://github.com/Rychillie/4noobs-mobile`
+`$ git clone https://github.com/Rychillie/4noobs-mobile.git`
 
 ### 🎛 Setup
 
-#### Android
+Instale as dependencias usando este comando:
 
-- `$ react-native run-android`
+`$ yarn install` para Yarn, ou `$ npm install` se estiver usando NPM
 
-#### iOS - _Apenas no MAC_
+Execute o servidor local para poder usar o aplicativo no Expo usando:
 
-- `cd ios && pod install && cd ..`
+**Android**
 
-- `react-native run-ios`
+`$ yarn android` para Yarn, ou `$ npm run android` para NPM
+
+**iOS**
+
+`$ yarn ios` para Yarn, ou `$ npm run ios` para NPM
 
 ---
 
 ## 📋 Funcionalidades
+
+- [ ] Trabalho em progresso...
 
 ### 📖 Documentação
 
@@ -131,13 +135,13 @@ Para rodar qualquer aplicação feita em React Native você precisa configurar o
 
 - 🔃 Crie um novo Pull Request
 
-Depois que for feito o merge do seu Pull Request, você pode deletar a branch de feature.
+Depois que for feito o merge do seu Pull Request, você pode deletar a branch ou o fork.
 
 ---
 
-## 📌 Apoio
+## 📌 Contato
 
-Entre em contato comigo em qualquer uma das minhas redes!
+Entre em contato comigo em qualquer uma das minhas redes sociais!
 
 - Me encontre [aqui](https://alll.ink/Rychillie) 👈
 
@@ -148,7 +152,7 @@ Entre em contato comigo em qualquer uma das minhas redes!
 <img alt="License" src="https://img.shields.io/badge/license-MIT-%2304D361?color=8743CC">
 
 
-Este projeto está licenciado sob a licença MIT - consulte o arquivo [LICENSE](LICENSE) para obter detalhes.
+Este projeto está licenciado sob a licença MIT - consulte o arquivo [LICENSE](LICENSE) para obter mais detalhes.
 
 ---
 
