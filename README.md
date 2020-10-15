@@ -1,6 +1,6 @@
 <h1 align="center">
   <a href="https://github.com/Rychillie/4noobs-mobile">
-    <img alt="Logo do 4noobs" src="./readme/logo.png" />
+    <img alt="Logo do 4noobs" src="./readme/logo.png">
   </a>
 </h1>
 
@@ -25,10 +25,10 @@
 <p align="center">O <strong>4Noobs Mobile</strong> é uma extensão do repositório <strong>4Noobs</strong> no Github que busca facilitar os estudos de pessoas que buscam conhecimento na area de tecnologia. Com cursos gratuitos feitos pela comunidade e para comunidade, esse aplicativo busca seguir a filosofia: feito pela comunidade para a comunidade de forma gratuita e com o intuito de evoluirmos nosso conhecimento.</p>
 
 <p align="center">
-  <img src="./readme/introduction.png" width="200" height="433" />
-  <img src="./readme/home-dark.png" width="200" height="433" />
-  <img src="./readme/modules-dark.png" width="200" height="433" />
-  <img src="./readme/learn-dark.png" width="200" height="433" />
+  <img src="./readme/introduction.png" width="200" height="433">
+  <img src="./readme/home-dark.png" width="200" height="433">
+  <img src="./readme/modules-dark.png" width="200" height="433">
+  <img src="./readme/learn-dark.png" width="200" height="433">
 </p>
 
 <p align="center">
@@ -84,11 +84,11 @@ Execute o servidor local para poder usar o aplicativo no Expo usando:
 
 **Android**
 
-`$ yarn android` para Yarn, ou `$ npm run android` para NPM
+`$ yarn android` ou `$ npm run android`
 
 **iOS**
 
-`$ yarn ios` para Yarn, ou `$ npm run ios` para NPM
+`$ yarn ios` ou `$ npm run ios`
 
 ---
 
@@ -125,15 +125,15 @@ Execute o servidor local para poder usar o aplicativo no Expo usando:
 
 ### Passo 4
 
-- ✅ Faça commit com as suas mudanças executando `git commit -m 'feat: My new feature'`;
+- ✅ Faça commit com as suas mudanças executando `git commit -m 'feat: My new feature'`
 
 ### Passo 5
 
-- 📌 Faça o Push para da branch executando `git push origin my-feature`;
+- 📌 Faça o Push para da branch executando `git push origin my-feature`
 
 ### Passo 6
 
-- 🔃 Crie um novo Pull Request
+- 🔃 Crie um novo Pull Request.
 
 Depois que for feito o merge do seu Pull Request, você pode deletar a branch ou o fork.
 
