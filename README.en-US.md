@@ -1,6 +1,6 @@
 <h1 align="center">
   <a href="https://github.com/Rychillie/4noobs-mobile">
-    <img alt="4noobs logo" src="./readme/logo.png" />
+    <img alt="4noobs logo" src="./readme/logo.png">
   </a>
 </h1>
 
@@ -23,10 +23,10 @@
 <p align="center"><strong>4Noobs Mobile</strong> is a <strong>4Noobs</strong> repository extension that seeks to make the studying process easier for people that are new to the technology market. With free resources made by the community to community, to achieve the goal of evolving our knowledge as a community.</p>
 
 <p align="center">
-  <img src="./readme/introduction.png" width="200" height="433" />
-  <img src="./readme/home-dark.png" width="200" height="433" />
-  <img src="./readme/modules-dark.png" width="200" height="433" />
-  <img src="./readme/learn-dark.png" width="200" height="433" />
+  <img src="./readme/introduction.png" width="200" height="433">
+  <img src="./readme/home-dark.png" width="200" height="433">
+  <img src="./readme/modules-dark.png" width="200" height="433">
+  <img src="./readme/learn-dark.png" width="200" height="433">
 </p>
 
 <p align="center">
@@ -41,7 +41,7 @@
   <li>
     <a href="#-Run-the-application">Run the application</a>
     <ul>
-      <li><a href="#-before-you-start">Requirements</a></li>
+      <li><a href="#-before-you-start">Before you start</a></li>
       <li><a href="#-clone">Clone</a></li>
       <li><a href="#-setup">Setup</a></li>
     </ul>
@@ -76,21 +76,23 @@ Clone this repository to your machine using the command:
 
 Install the dependencies using the command:
 
-- `$ yarn install`
+`$ yarn install` for Yarn, or `$ npm install` if you are using NPM.
 
-#### Android
+Run the local server to be able to use the application at Expo using:
 
-- `$ react-native run-android`
+**Android**
 
-#### iOS - _For macOS only_
+`$ yarn android` or `$ npm run android`
 
-- `$ cd ios && pod install && cd ..`
+**iOS**
 
-- `$ react-native run-ios`
+`$ yarn ios` or `$ npm run ios`
 
 ---
 
 ## 📋 Features
+
+- [ ] Working in progress...
 
 ### 📖 Documentation
 
@@ -121,15 +123,15 @@ Install the dependencies using the command:
 
 ### Step 4
 
-- ✅ Commit your changes using the command `git commit -m 'feat: My new feature'`;
+- ✅ Commit your changes using the command `git commit -m 'feat: My new feature'`
 
 ### Step 5
 
-- 📌 Push your branch using the command `git push origin my-feature`;
+- 📌 Push your branch using the command `git push origin my-feature`
 
 ### Step 6
 
-- 🔃 Open a new Pull Request
+- 🔃 Open a new Pull Request.
 
 After your PR has been merged, you can now delete your branch or the fork.
 

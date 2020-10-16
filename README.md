@@ -1,6 +1,6 @@
 <h1 align="center">
   <a href="https://github.com/Rychillie/4noobs-mobile">
-    <img alt="Logo do 4noobs" src="./readme/logo.png" />
+    <img alt="Logo do 4noobs" src="./readme/logo.png">
   </a>
 </h1>
 
@@ -25,10 +25,10 @@
 <p align="center">O <strong>4Noobs Mobile</strong> é uma extensão do repositório <strong>4Noobs</strong> no Github que busca facilitar os estudos de pessoas que buscam conhecimento na area de tecnologia. Com cursos gratuitos feitos pela comunidade e para comunidade, esse aplicativo busca seguir a filosofia: feito pela comunidade para a comunidade de forma gratuita e com o intuito de evoluirmos nosso conhecimento.</p>
 
 <p align="center">
-  <img src="./readme/introduction.png" width="200" height="433" />
-  <img src="./readme/home-dark.png" width="200" height="433" />
-  <img src="./readme/modules-dark.png" width="200" height="433" />
-  <img src="./readme/learn-dark.png" width="200" height="433" />
+  <img src="./readme/introduction.png" width="200" height="433">
+  <img src="./readme/home-dark.png" width="200" height="433">
+  <img src="./readme/modules-dark.png" width="200" height="433">
+  <img src="./readme/learn-dark.png" width="200" height="433">
 </p>
 
 <p align="center">
@@ -51,12 +51,12 @@
   <li>
     <a href="#-funcionalidades">Funcionalidades</a>
     <ul>
-      <li><a href="#-documentacao">Documentação</a></li>
+      <li><a href="#-documentação">Documentação</a></li>
       <li><a href="#-feito-com">Feito Com</a></li>
     </ul>
   </li>
   <li><a href="#-contribuição">Contribuição</a></li>
-  <li><a href="#-apoio">Apoio</a></li>
+  <li><a href="#-contato">Contato</a></li>
   <li><a href="#-licença">Licença</a></li>
 </ul>
 
@@ -68,29 +68,33 @@
 
 Para rodar qualquer aplicação feita em React Native você precisa configurar o Ambiente de Desenvolvimento na sua máquina. Você pode verificar a documentação oficial [aqui](https://reactnative.dev/docs/environment-setup).
 
-- [ ] Trabalho em progresso...
-
 ### 👯 Clone
 
-- Clone esse repositório para sua máquina local:
+Clone esse repositório para sua máquina local usando o comando:
 
-`https://github.com/Rychillie/4noobs-mobile`
+`$ git clone https://github.com/Rychillie/4noobs-mobile.git`
 
 ### 🎛 Setup
 
-#### Android
+Instale as dependencias usando este comando:
 
-- `$ react-native run-android`
+`$ yarn install` para Yarn, ou `$ npm install` se estiver usando NPM
 
-#### iOS - _Apenas no MAC_
+Execute o servidor local para poder usar o aplicativo no Expo usando:
 
-- `cd ios && pod install && cd ..`
+**Android**
 
-- `react-native run-ios`
+`$ yarn android` ou `$ npm run android`
+
+**iOS**
+
+`$ yarn ios` ou `$ npm run ios`
 
 ---
 
 ## 📋 Funcionalidades
+
+- [ ] Trabalho em progresso...
 
 ### 📖 Documentação
 
@@ -121,23 +125,23 @@ Para rodar qualquer aplicação feita em React Native você precisa configurar o
 
 ### Passo 4
 
-- ✅ Faça commit com as suas mudanças executando `git commit -m 'feat: My new feature'`;
+- ✅ Faça commit com as suas mudanças executando `git commit -m 'feat: My new feature'`
 
 ### Passo 5
 
-- 📌 Faça o Push para da branch executando `git push origin my-feature`;
+- 📌 Faça o Push para da branch executando `git push origin my-feature`
 
 ### Passo 6
 
-- 🔃 Crie um novo Pull Request
+- 🔃 Crie um novo Pull Request.
 
-Depois que for feito o merge do seu Pull Request, você pode deletar a branch de feature.
+Depois que for feito o merge do seu Pull Request, você pode deletar a branch ou o fork.
 
 ---
 
-## 📌 Apoio
+## 📌 Contato
 
-Entre em contato comigo em qualquer uma das minhas redes!
+Entre em contato comigo em qualquer uma das minhas redes sociais!
 
 - Me encontre [aqui](https://alll.ink/Rychillie) 👈
 
@@ -148,7 +152,7 @@ Entre em contato comigo em qualquer uma das minhas redes!
 <img alt="License" src="https://img.shields.io/badge/license-MIT-%2304D361?color=8743CC">
 
 
-Este projeto está licenciado sob a licença MIT - consulte o arquivo [LICENSE](LICENSE) para obter detalhes.
+Este projeto está licenciado sob a licença MIT - consulte o arquivo [LICENSE](LICENSE) para obter mais detalhes.
 
 ---
 
