@@ -1,5 +1,4 @@
 node_modules/**/*
-.expo/*
 npm-debug.*
 *.jks
 *.p8
