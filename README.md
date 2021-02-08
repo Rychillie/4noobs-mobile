@@ -8,8 +8,6 @@
   4noobs - Mobile
 </h2>
 
-<h6 align="center">You can also check the english version <a href="README.en-US.md">here</a>.</h6>
-
 <p align="center">
   <a href="https://github.com/Rychillie">
     <img alt="Feito por Rychillie" src="https://img.shields.io/badge/made%20by-Rychillie-8743CC">
