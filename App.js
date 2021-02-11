@@ -5,13 +5,14 @@ import styled from "styled-components";
 import Card from "./components/Card";
 import Logo from "./components/Logo";
 import Course from "./components/Course";
-import { Ionicons } from "@expo/vector-icons";
+import Menu from "./components/Menu";
 
 import { NotificationIcon } from "./components/Icons";
 
 export default function App() {
   return (
     <Container>
+      <Menu />
       <SafeAreaView>
         <ScrollView style={{ height: "100%" }}>
           <TitleBar>
@@ -22,7 +23,12 @@ export default function App() {
             <Name>Rychillie</Name>
 
             <NotificationIcon
-              style={{ position: "absolute", right: 40, top: 5 }}
+              style={{
+                marginRight: 20,
+                position: "absolute",
+                right: 20,
+                top: 5,
+              }}
             />
           </TitleBar>
 
@@ -36,9 +42,11 @@ export default function App() {
             horizontal={true}
             showsHorizontalScrollIndicator={false}
           >
-            {logos.map((logo, index) => (
-              <Logo key={index} image={logo.image} text={logo.text} />
-            ))}
+            <MyView>
+              {logos.map((logo, index) => (
+                <Logo key={index} image={logo.image} text={logo.text} />
+              ))}
+            </MyView>
           </ScrollView>
 
           <Subtitle>Continue Learning</Subtitle>
@@ -48,16 +56,18 @@ export default function App() {
             style={{ paddingBottom: 30 }}
             showsHorizontalScrollIndicator={false}
           >
-            {cards.map((card, index) => (
-              <Card
-                key={index}
-                title={card.title}
-                image={card.image}
-                caption={card.caption}
-                logo={card.logo}
-                subtitle={card.subtitle}
-              />
-            ))}
+            <MyView>
+              {cards.map((card, index) => (
+                <Card
+                  key={index}
+                  title={card.title}
+                  image={card.image}
+                  caption={card.caption}
+                  logo={card.logo}
+                  subtitle={card.subtitle}
+                />
+              ))}
+            </MyView>
           </ScrollView>
 
           <Subtitle>Popular Courses</Subtitle>
@@ -80,6 +90,11 @@ export default function App() {
     </Container>
   );
 }
+
+const MyView = styled.View`
+  margin-right: 20px;
+  flex-direction: row;
+`;
 
 const Subtitle = styled.Text`
   color: #b8bece;
