@@ -16,6 +16,8 @@
     "react-native": "https://github.com/expo/react-native/archive/sdk-40.0.1.tar.gz",
     "react-native-svg": "12.1.0",
     "react-native-web": "~0.13.12",
+    "react-redux": "^7.2.2",
+    "redux": "^4.0.5",
     "styled-components": "^5.2.1"
   },
   "devDependencies": {
