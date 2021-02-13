@@ -31,10 +31,15 @@ function mapDispatchToProps(dispatch) {
 }
 
 class HomeScreen extends React.Component {
+  static navigationOptions = {
+    headerShown: false,
+  };
+
   state = {
     scale: new Animated.Value(1),
     opacity: new Animated.Value(1),
   };
+
   componentDidMount() {
     StatusBar.setBarStyle("dark-content", true);
   }
@@ -135,14 +140,20 @@ class HomeScreen extends React.Component {
               >
                 <MyView>
                   {cards.map((card, index) => (
-                    <Card
+                    <TouchableOpacity
                       key={index}
-                      title={card.title}
-                      image={card.image}
-                      caption={card.caption}
-                      logo={card.logo}
-                      subtitle={card.subtitle}
-                    />
+                      onPress={() => {
+                        this.props.navigation.push("Section");
+                      }}
+                    >
+                      <Card
+                        title={card.title}
+                        image={card.image}
+                        caption={card.caption}
+                        logo={card.logo}
+                        subtitle={card.subtitle}
+                      />
+                    </TouchableOpacity>
                   ))}
                 </MyView>
               </ScrollView>
@@ -193,7 +204,8 @@ const Subtitle = styled.Text`
 const Container = styled.View`
   flex: 1;
   background-color: #f0f3f5;
-  border-radius: 10px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 `;
 
 const AnimatedContainer = Animated.createAnimatedComponent(Container);

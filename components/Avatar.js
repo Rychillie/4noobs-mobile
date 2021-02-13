@@ -31,7 +31,7 @@ class Avatar extends React.Component {
     })
       .then((response) => response.json())
       .then((response) => {
-        console.log(response);
+        //console.log(response);
 
         this.setState({
           photo: response[0].photo,
