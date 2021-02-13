@@ -12,12 +12,13 @@ import Card from "../components/Card";
 import Logo from "../components/Logo";
 import Course from "../components/Course";
 import Menu from "../components/Menu";
+import Avatar from "../components/Avatar";
 import { connect } from "react-redux";
 
 import { NotificationIcon } from "../components/Icons";
 
 function mapStateToProps(state) {
-  return { action: state.action };
+  return { action: state.action, name: state.name };
 }
 
 function mapDispatchToProps(dispatch) {
@@ -91,12 +92,12 @@ class HomeScreen extends React.Component {
                   onPress={this.props.openMenu}
                   style={{ position: "absolute", top: 0, left: 0 }}
                 >
-                  <Avatar source={require("../assets/rychillie.png")} />
+                  <Avatar />
                 </TouchableOpacity>
 
                 <Title>welcome back,</Title>
 
-                <Name>Rychillie</Name>
+                <Name>{this.props.name}</Name>
 
                 <NotificationIcon
                   style={{
@@ -187,15 +188,6 @@ const Subtitle = styled.Text`
   margin-left: 20px;
   margin-top: 20px;
   text-transform: uppercase;
-`;
-
-const Avatar = styled.Image`
-  width: 44px;
-  height: 44px;
-  background: black;
-  border-radius: 22px;
-  top: 0;
-  left: 0;
 `;
 
 const Container = styled.View`
