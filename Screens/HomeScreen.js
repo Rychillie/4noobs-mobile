@@ -9,13 +9,47 @@ import {
 import React from "react";
 import styled from "styled-components";
 import Card from "../components/Card";
+import { NotificationIcon } from "../components/Icons";
 import Logo from "../components/Logo";
 import Course from "../components/Course";
 import Menu from "../components/Menu";
 import Avatar from "../components/Avatar";
 import { connect } from "react-redux";
+import gql from "graphql-tag";
+import { Query } from "react-apollo";
 
-import { NotificationIcon } from "../components/Icons";
+const CardsQuery = gql`
+  {
+    cardsCollection {
+      items {
+        title
+        subtitle
+        image {
+          title
+          description
+          contentType
+          fileName
+          size
+          url
+          width
+          height
+        }
+        subtitle
+        caption
+        logo {
+          title
+          description
+          contentType
+          fileName
+          size
+          url
+          width
+          height
+        }
+      }
+    }
+  }
+`;
 
 function mapStateToProps(state) {
   return { action: state.action, name: state.name };
@@ -124,11 +158,11 @@ class HomeScreen extends React.Component {
                 horizontal={true}
                 showsHorizontalScrollIndicator={false}
               >
-                <MyView>
+                <CardsContainer>
                   {logos.map((logo, index) => (
                     <Logo key={index} image={logo.image} text={logo.text} />
                   ))}
-                </MyView>
+                </CardsContainer>
               </ScrollView>
 
               <Subtitle>Continue Learning</Subtitle>
@@ -138,26 +172,35 @@ class HomeScreen extends React.Component {
                 style={{ paddingBottom: 30 }}
                 showsHorizontalScrollIndicator={false}
               >
-                <MyView>
-                  {cards.map((card, index) => (
-                    <TouchableOpacity
-                      key={index}
-                      onPress={() => {
-                        this.props.navigation.push("Section", {
-                          section: card,
-                        });
-                      }}
-                    >
-                      <Card
-                        title={card.title}
-                        image={card.image}
-                        caption={card.caption}
-                        logo={card.logo}
-                        subtitle={card.subtitle}
-                      />
-                    </TouchableOpacity>
-                  ))}
-                </MyView>
+                <Query query={CardsQuery}>
+                  {({ loading, error, data }) => {
+                    if (loading) return <Message>Loading...</Message>;
+                    if (error) return <Message>Error...</Message>;
+
+                    return (
+                      <CardsContainer>
+                        {data.cardsCollection.items.map((card, index) => (
+                          <TouchableOpacity
+                            key={index}
+                            onPress={() => {
+                              this.props.navigation.push("Section", {
+                                section: card,
+                              });
+                            }}
+                          >
+                            <Card
+                              title={card.title}
+                              image={card.image}
+                              caption={card.caption}
+                              logo={card.logo}
+                              subtitle={card.subtitle}
+                            />
+                          </TouchableOpacity>
+                        ))}
+                      </CardsContainer>
+                    );
+                  }}
+                </Query>
               </ScrollView>
 
               <Subtitle>Popular Courses</Subtitle>
@@ -184,14 +227,21 @@ class HomeScreen extends React.Component {
 
 export default connect(mapStateToProps, mapDispatchToProps)(HomeScreen);
 
+const Message = styled.Text`
+  margin: 20px;
+  color: #b8bece;
+  font-size: 15px;
+  font-weight: 500;
+`;
+
+const CardsContainer = styled.View`
+  margin-right: 20px;
+  flex-direction: row;
+`;
+
 const RootView = styled.View`
   background: black;
   flex: 1;
-`;
-
-const MyView = styled.View`
-  margin-right: 20px;
-  flex-direction: row;
 `;
 
 const Subtitle = styled.Text`
