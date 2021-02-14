@@ -2,10 +2,10 @@ import React from "react";
 import { createStore } from "redux";
 import { Provider } from "react-redux";
 import AppNavigator from "./navigator/AppNavigator";
-import HomeScreen from "./Screens/HomeScreen";
 import ApolloClient from "apollo-boost";
 import { ApolloProvider } from "react-apollo";
 
+//https://www.contentful.com/developers/docs/javascript/tutorials/using-contentful-graphql-with-javascript/
 //https://graphql.contentful.com/content/v1/spaces/{SPACE_ID}/explore?access_token={CDA_TOKEN}
 
 const client = new ApolloClient({
