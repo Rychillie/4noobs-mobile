@@ -1,11 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import {
-  TouchableOpacity,
-  StatusBar,
-  Linkingm,
-  ScrollView,
-} from "react-native";
+import { TouchableOpacity, StatusBar, Linking, ScrollView } from "react-native";
 import { WebView } from "react-native-webview";
 import { Ionicons } from "@expo/vector-icons";
 import Markdown from "react-native-showdown";
