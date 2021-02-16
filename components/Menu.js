@@ -136,7 +136,7 @@ const Cover = styled.View`
 `;
 
 const Content = styled.View`
-  height: ${screenHeight};
+  height: ${screenHeight}px;
   background: #f0f3f5;
   padding: 50px;
 `;
