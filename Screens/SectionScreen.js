@@ -4,6 +4,7 @@ import { TouchableOpacity, StatusBar, Linking, ScrollView } from "react-native";
 import { WebView } from "react-native-webview";
 import { Ionicons } from "@expo/vector-icons";
 import Markdown from "react-native-showdown";
+import showdown from "showdown";
 
 class SectionScreen extends React.Component {
   static navigationOptions = {
@@ -21,6 +22,9 @@ class SectionScreen extends React.Component {
   render() {
     const { navigation } = this.props;
     const section = navigation.getParam("section");
+
+    const converter = new showdown.Converter();
+    const html = converter.makeHtml(section.content);
 
     return (
       <ScrollView>
@@ -51,27 +55,26 @@ class SectionScreen extends React.Component {
             </CloseView>
           </TouchableOpacity>
           <Content>
+            <WebView
+              source={{ html }}
+              scalesPageToFit={false}
+              scrollEnabled={false}
+              ref="webview"
+              onNavigationStateChange={(event) => {
+                if (event.url != "about:blank") {
+                  this.refs.webview.stopLoading();
+                  Linking.openURL(event.url);
+                }
+              }}
+            />
             {/*
-          <WebView
-            source={{ html: section.content + metaTag + htmlStyles }}
-            scalesPageToFit={false}
-            scrollEnabled={false}
-            ref="webview"
-            onNavigationStateChange={(event) => {
-              if (event.url != "about:blank") {
-                this.refs.webview.stopLoading();
-                Linking.openURL(event.url);
-              }
-            }}
-          />
-          */}
             <Markdown
               style={{ backgroundColor: "transparent" }}
               body={section.content}
               pureCSS={htmlStyles}
               scalesPageToFit={false}
               scrollEnabled={false}
-            />
+            /> */}
           </Content>
         </Container>
       </ScrollView>
@@ -151,8 +154,7 @@ const metaTag = `
 `;
 
 const Content = styled.View`
-  min-height: 100%;
-  height: 9000px;
+  height: 100%;
   padding: 20px;
 `;
 
