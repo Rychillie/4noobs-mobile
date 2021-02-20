@@ -4,14 +4,12 @@ import { TouchableOpacity, StatusBar, Linking, ScrollView } from "react-native";
 import { WebView } from "react-native-webview";
 import { Ionicons } from "@expo/vector-icons";
 import Markdown from "react-native-showdown";
-import global from '../utils/global';
+import showdown from "showdown";
 
 class SectionScreen extends React.Component {
-
   static navigationOptions = {
     headerShown: false,
   };
-
 
   componentDidMount() {
     StatusBar.setBarStyle("light-content", true);
@@ -22,17 +20,11 @@ class SectionScreen extends React.Component {
   }
 
   render() {
-    
     const { navigation } = this.props;
     const section = navigation.getParam("section");
 
-    if(section.content) {
-      global.size = section.content.length;
-    } else {
-      global.size = 0;
-    }
-
-    
+    const converter = new showdown.Converter();
+    const MyHtml = converter.makeHtml(section.content);
 
     return (
       <ScrollView>
@@ -63,28 +55,27 @@ class SectionScreen extends React.Component {
             </CloseView>
           </TouchableOpacity>
           <Content>
-            {/*
-          <WebView
-            source={{ html: section.content + metaTag + htmlStyles }}
-            scalesPageToFit={false}
-            scrollEnabled={false}
-            ref="webview"
-            onNavigationStateChange={(event) => {
-              if (event.url != "about:blank") {
-                this.refs.webview.stopLoading();
-                Linking.openURL(event.url);
-              }
-            }}
-          />
-          */}
-            <Markdown
+            <WebView
+              style={{ backgroundColor: "transparent" }}
+              source={{ html: MyHtml + metaTag }}
+              scalesPageToFit={false}
+              scrollEnabled={false}
+              ref="webview"
+              onNavigationStateChange={(event) => {
+                if (event.url != "about:blank") {
+                  this.refs.webview.stopLoading();
+                  Linking.openURL(event.url);
+                }
+              }}
+            />
+
+            {/* <Markdown
               style={{ backgroundColor: "transparent" }}
               body={section.content}
               pureCSS={htmlStyles}
               scalesPageToFit={false}
               scrollEnabled={false}
-            />
-
+            /> */}
           </Content>
         </Container>
       </ScrollView>
@@ -99,7 +90,6 @@ const htmlContent = `
   <p>This <strong>is</strong> a <a href="https://rychillie.net">Link</a></p>
   <img src="https://cl.ly/55da82beb939/download/avatar-default.jpg"/>
 `;
-
 
 const htmlStyles = `
   * {
@@ -145,7 +135,9 @@ const htmlStyles = `
     width: 100%;
     border-radius: 10px;
     margin-top: 20px;
-  }const windowHeight = Dimensions.get('screen').height;
+  }
+  pre {
+    padding: 20px;
     background: #212C4F;
     overflow: hidden;
     word-wrap: break-word;
@@ -158,17 +150,12 @@ const htmlStyles = `
   }
 `;
 
-
-global.size = Math.round(global.size * 1.35);
-
-
 const metaTag = `
   <meta name="viewport" content="width=device-width, initial-scale=1">
 `;
 
 const Content = styled.View`
-  min-height: 100%;
-  height: ${global.size};
+  height: 100%;
   padding: 20px;
 `;
 
