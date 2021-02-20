@@ -1,10 +1,17 @@
 import React from "react";
 import styled from "styled-components";
-import { TouchableOpacity, StatusBar, Linking, ScrollView } from "react-native";
+import {
+  TouchableOpacity,
+  StatusBar,
+  Linking,
+  ScrollView,
+  Dimensions,
+} from "react-native";
 import { WebView } from "react-native-webview";
 import { Ionicons } from "@expo/vector-icons";
 import Markdown from "react-native-showdown";
 import showdown from "showdown";
+import AutoHeightWebView from "react-native-autoheight-webview";
 
 class SectionScreen extends React.Component {
   static navigationOptions = {
@@ -24,7 +31,7 @@ class SectionScreen extends React.Component {
     const section = navigation.getParam("section");
 
     const converter = new showdown.Converter();
-    const html = converter.makeHtml(section.content);
+    const ContentHTML = converter.makeHtml(section.content);
 
     return (
       <ScrollView>
@@ -55,8 +62,8 @@ class SectionScreen extends React.Component {
             </CloseView>
           </TouchableOpacity>
           <Content>
-            <WebView
-              source={{ html }}
+            {/* <WebView
+              source={{ html: ContentHTML }}
               scalesPageToFit={false}
               scrollEnabled={false}
               ref="webview"
@@ -66,7 +73,41 @@ class SectionScreen extends React.Component {
                   Linking.openURL(event.url);
                 }
               }}
+            /> */}
+
+            <AutoHeightWebView
+              customStyle={htmlStyles}
+              source={{ html: ContentHTML }}
+              viewportContent={"width=device-width, initial-scale=1"}
+              scalesPageToFit={false}
+              scrollEnabled={false}
+              style={{
+                width: "100%",
+                backgroundColor: "transparent",
+              }}
+              ref="webview"
+              onNavigationStateChange={(event) => {
+                if (event.url != "about:blank") {
+                  this.refs.webview.stopLoading();
+                  Linking.openURL(event.url);
+                }
+              }}
+              onSizeUpdated={(size) => console.log(size.height)}
             />
+            {/*
+            <MyWebView
+              startInLoadingState={true}
+              source={{ html: ContentHTML + metaTag + htmlStyles }}
+              scalesPageToFit={false}
+              scrollEnabled={false}
+              ref="webview"
+              onNavigationStateChange={(event) => {
+                if (event.url != "about:blank") {
+                  this.refs.webview.stopLoading();
+                  Linking.openURL(event.url);
+                }
+              }}
+            /> */}
             {/*
             <Markdown
               style={{ backgroundColor: "transparent" }}
@@ -88,6 +129,10 @@ const htmlContent = `
   <h2>This is a title</h2>
   <p>This <strong>is</strong> a <a href="https://rychillie.net">Link</a></p>
   <img src="https://cl.ly/55da82beb939/download/avatar-default.jpg"/>
+`;
+
+const metaTag = `
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 `;
 
 const htmlStyles = `
@@ -149,13 +194,9 @@ const htmlStyles = `
   }
 `;
 
-const metaTag = `
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-`;
-
 const Content = styled.View`
   height: 100%;
-  padding: 20px;
+  padding: 0 20px 60px 20px;
 `;
 
 const Container = styled.View`
